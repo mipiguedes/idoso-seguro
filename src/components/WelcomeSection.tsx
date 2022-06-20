@@ -85,7 +85,7 @@ const ResetContentValue = () => {
 
 const handleContinueButton = () => {
   ResetContentValue();
-  window.location.href = "/elderly-gamification/jogar";
+  window.location.href = "/idoso-seguro/jogar";
 };
 
 export const WelcomeSection = () => {

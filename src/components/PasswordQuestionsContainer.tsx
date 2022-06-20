@@ -44,7 +44,7 @@ export function PasswordQuestionsContainer({
 }: PasswordQuestionsContainerProps) {
 
   const sendToMedalsPage = () => {
-    window.location.href = "/elderly-gamification/medalhas";
+    window.location.href = "/idoso-seguro/medalhas";
     localStorage.setItem("currentSection", "content");
     localStorage.setItem("currentContent", "0");
     localStorage.setItem("progressBarValue", "0");
