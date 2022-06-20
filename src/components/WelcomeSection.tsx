@@ -1,6 +1,7 @@
 import { styled } from "@stitches/react";
 import { ContainerMobile } from "./ContainerMobile";
 import { Button } from "./Button";
+import { useNavigate } from 'react-router-dom'
 
 const WelcomeSectionStyle = styled("div", {
   backgroundColor: "#060D18",
@@ -83,12 +84,13 @@ const ResetContentValue = () => {
   handleSetItemOnCache("currentQuestion", "0");
 };
 
-const handleContinueButton = () => {
-  ResetContentValue();
-  window.location.href = "/idoso-seguro/jogar";
-};
-
 export const WelcomeSection = () => {
+  const navigate = useNavigate();
+
+  const handleContinueButton = () => {
+    ResetContentValue();
+    navigate('/idoso-seguro/jogar');
+  };
   return (
     <WelcomeSectionStyle>
       <ContainerMobile>

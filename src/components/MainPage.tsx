@@ -7,6 +7,7 @@ import { ContentSection } from "./ContentSection";
 import { AlertCard } from "./AlertCard";
 import { ReturnButton } from "./ReturnButton";
 import { Button } from "./Button";
+import { useNavigate } from 'react-router-dom'
 
 import { PasswordQuestionsContainer } from "./PasswordQuestionsContainer";
 import passwordQuestionsData from "../passwordQuestions.json";
@@ -230,7 +231,9 @@ export function MainPage() {
     handleSetItemOnCache("progressBarValue", "0");
     handleSetItemOnCache("currentSection", "content");
     handleSetItemOnCache("currentQuestion", "0");
-    window.location.href = "/";
+    
+    const navigate = useNavigate();
+    navigate('/idoso-seguro/');
   };
 
   const handleReturnButton = () => {

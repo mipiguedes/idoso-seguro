@@ -3,6 +3,8 @@ import { Button } from "./Button";
 import { QuestionSection } from "./QuestionSection";
 import passwordQuestionsData from "../passwordQuestions.json";
 import { AlertCard } from "./AlertCard";
+import { useNavigate } from 'react-router-dom'
+
 
 type PasswordQuestionsContainerProps = {
   currentFeedback: number;
@@ -43,15 +45,16 @@ export function PasswordQuestionsContainer({
   buttonContinueText,
 }: PasswordQuestionsContainerProps) {
 
+  const navigate = useNavigate();
+
   const sendToMedalsPage = () => {
-    window.location.href = "/idoso-seguro/medalhas";
+
+    navigate('/idoso-seguro/medalhas');
     localStorage.setItem("currentSection", "content");
     localStorage.setItem("currentContent", "0");
     localStorage.setItem("progressBarValue", "0");
     localStorage.setItem("currentQuestion", "0");
   }
-
-  console.log("currentFeedback", currentFeedback);
 
   return (
     <PasswordQuestionsContainerStyle>
