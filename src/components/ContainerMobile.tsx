@@ -6,7 +6,7 @@ const ContainerMobileStyle = styled("div", {
   height: "100%",
   maxWidth: "640px",
   maxHeight: "100%",
-  fontSize: "14px",
+  fontSize: "15px",
   position: "relative",
   overflow: "hidden",
   length: 0,

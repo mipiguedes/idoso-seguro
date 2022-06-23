@@ -196,9 +196,15 @@ export function MainPage() {
 
   const handleButtonPrevious = () => {
     const previousContent = currentContent - 1;
-    setCurrentContent(previousContent);
-    handleSetItemOnCache("currentContent", String(previousContent));
-    SubProgressBarValue();
+
+    if(previousContent >= 0){
+      setCurrentContent(previousContent);
+      handleSetItemOnCache("currentContent", String(previousContent));
+      SubProgressBarValue();
+    }else{
+      redirectToHome();
+    }
+    
   };
 
   // const handlePreviousSection = () => {
@@ -226,15 +232,20 @@ export function MainPage() {
     handleSetItemOnCache("progressBarValue", String(0));
   };
 
+  const navigate = useNavigate();
+
   const handleExitSection = () => {
     handleSetItemOnCache("currentContent", "0");
     handleSetItemOnCache("progressBarValue", "0");
     handleSetItemOnCache("currentSection", "content");
     handleSetItemOnCache("currentQuestion", "0");
     
-    const navigate = useNavigate();
-    navigate('/idoso-seguro/');
+    navigate('/idoso-seguro/'); 
   };
+
+  const redirectToHome = () => {
+    navigate('/idoso-seguro/'); 
+  }
 
   const handleReturnButton = () => {
     const storagedCurrentSection = localStorage.getItem("currentSection");
